@@ -73,7 +73,7 @@ if [[ "$USE_GITHUB" == true ]]; then
   echo ""
   git clone --quiet "$GITHUB_TEMPLATE" "$DEST"
   rm -rf "$DEST/.git" "$DEST/README.md" "$DEST/new-project.sh"
-  git -C "$DEST" init --quiet
+  git -C "$DEST" init --quiet -b main
   git -C "$DEST" add CLAUDE.md .gitignore .mcp.json .claude/
   git -C "$DEST" commit --quiet -m "chore: initial project scaffold from claude-code-template"
 else
@@ -83,7 +83,7 @@ else
   cp "$TEMPLATE_DIR/.gitignore" "$DEST/.gitignore"
   cp "$TEMPLATE_DIR/.mcp.json"  "$DEST/.mcp.json"
   cp -r "$TEMPLATE_DIR/.claude" "$DEST/.claude"
-  git -C "$DEST" init --quiet
+  git -C "$DEST" init --quiet -b main
   git -C "$DEST" add CLAUDE.md .gitignore .mcp.json .claude/
   git -C "$DEST" commit --quiet -m "chore: initial project scaffold from claude-code-template"
 fi
