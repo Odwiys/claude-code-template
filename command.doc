@@ -1,8 +1,0 @@
-  # From the template dir
-  ./new-project.sh my-new-project
-
-  # From anywhere
-  bash /home/mathias/dev/claude-setup-prac/new-project.sh (Name of folder) ~/dev/work #(Change to location you want)
-
-  e.g.
-  bash /home/mathias/dev/claude-setup-prac/new-project.sh claude-project-test ~/dev
