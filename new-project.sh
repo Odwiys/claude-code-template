@@ -56,13 +56,14 @@ mkdir -p "$DEST"
 # Copy template files
 cp "$TEMPLATE_DIR/CLAUDE.md"  "$DEST/CLAUDE.md"
 cp "$TEMPLATE_DIR/.gitignore" "$DEST/.gitignore"
+cp "$TEMPLATE_DIR/.mcp.json"  "$DEST/.mcp.json"
 
 # Copy .claude/ directory (settings, etc.)
 cp -r "$TEMPLATE_DIR/.claude" "$DEST/.claude"
 
 # Initialize git
 git -C "$DEST" init --quiet
-git -C "$DEST" add CLAUDE.md .gitignore .claude/
+git -C "$DEST" add CLAUDE.md .gitignore .mcp.json .claude/
 git -C "$DEST" commit --quiet -m "chore: initial project scaffold from claude-setup-prac template"
 
 # ---- Success message -------------------------------------------------------

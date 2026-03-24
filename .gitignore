@@ -119,6 +119,7 @@ Session.vim
 # Claude Code
 # ============================================================
 .claude/settings.local.json
+claude-code-masterguide.md
 
 # ============================================================
 # Secrets (belt-and-suspenders)

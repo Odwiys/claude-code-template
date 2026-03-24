@@ -49,6 +49,24 @@ Example structure:
 
 ---
 
+## MCP Servers
+
+This project template pre-configures MCP servers in `.mcp.json`. **Only use a server when the project actually integrates that service.** Remove unused entries from `.mcp.json` when setting up a new project.
+
+| Server | Use when | Required env var(s) |
+|--------|----------|---------------------|
+| `vercel` | Deploying to Vercel (listing deployments, env vars, domains) | `VERCEL_TOKEN` |
+| `supabase` | Using Supabase for database, auth, or storage | `SUPABASE_ACCESS_TOKEN` |
+| `mongodb` | Using MongoDB / Atlas as the database | `MDB_MCP_CONNECTION_STRING` |
+| `playwright` | Browser automation, E2E testing, or web scraping | _(none required)_ |
+| `stripe` | Processing payments or interacting with the Stripe API | `STRIPE_SECRET_KEY` |
+
+**Setup**: Add the required env vars to your shell profile or a local `.env` file (never commit them). Tokens are passed via env var substitution — nothing sensitive is stored in `.mcp.json`.
+
+**Approving servers**: On first use, Claude Code will prompt you to approve each MCP server. You can also set `"enableAllProjectMcpServers": true` in `.claude/settings.json` to auto-approve all servers listed in `.mcp.json`.
+
+---
+
 ## Constraints & Policies
 
 - **Never push directly to `main` or `master`**. All changes must go through a pull request.
