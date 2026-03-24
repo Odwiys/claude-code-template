@@ -72,7 +72,7 @@ if [[ "$USE_GITHUB" == true ]]; then
   echo "Source:           $GITHUB_TEMPLATE"
   echo ""
   git clone --quiet "$GITHUB_TEMPLATE" "$DEST"
-  rm -rf "$DEST/.git"
+  rm -rf "$DEST/.git" "$DEST/README.md" "$DEST/new-project.sh"
   git -C "$DEST" init --quiet
   git -C "$DEST" add CLAUDE.md .gitignore .mcp.json .claude/
   git -C "$DEST" commit --quiet -m "chore: initial project scaffold from claude-code-template"
